@@ -2,7 +2,7 @@ import React from "react";
 import NavBar from "./Components/NavBar/NavBar";
 import Overview from "./Components/Overview/Overview";
 
-import data from "./data.json";
+import overviewData from "./Data/overview.json";
 
 class App extends React.Component {
 	render() {
@@ -11,10 +11,10 @@ class App extends React.Component {
 				<NavBar />
 				<main>
 					<Overview
-						totalCases={parseInt(data.total)}
-						totalDeaths={parseInt(data.death)}
-						totalRecovered={parseInt(data.recovered)}
-						totalSerious={parseInt(data.serious)}
+						totalCases={parseInt(overviewData.total)}
+						totalDeaths={parseInt(overviewData.death)}
+						totalRecovered={parseInt(overviewData.recovered)}
+						totalSerious={parseInt(overviewData.serious)}
 					/>
 				</main>
 			</div>
