@@ -14,9 +14,9 @@ html {
 	--primary-dark: #025a57;
 	--primary-light: #007772;
 
-	--red-1: #ff4c4c;
-	--green: #22dd66;
-	--yellow: #f3f169;
+	--red: #f65164;
+	--green: #65dd9b;
+	--yellow: #f8f540;
 
 	--nav-red: #e9707c;
 }
@@ -27,6 +27,7 @@ body {
 		"Helvetica Neue", sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	overflow-x: hidden;
 }
 
 code {
@@ -37,5 +38,6 @@ code {
 main {
 	background-color: var(--primary-dark);
 	width: 100vw;
-	height: auto;
+	min-height: 100vh;
+	padding-top: 5rem;
 }

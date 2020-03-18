@@ -1,0 +1,35 @@
+.overview {
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	background-color: var(--primary-light);
+	width: 60%;
+	margin: auto;
+	height: 10rem;
+	border-radius: 3rem;
+
+	.overview-item {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		.overview-item-count {
+			font-size: 3.5rem;
+		}
+		.overview-item-name {
+			font-size: 1.2rem;
+		}
+	}
+
+	.total-cases {
+		color: var(--white);
+	}
+	.total-deaths {
+		color: var(--red);
+	}
+	.total-serious {
+		color: var(--yellow);
+	}
+	.total-recovered {
+		color: var(--green);
+	}
+}
