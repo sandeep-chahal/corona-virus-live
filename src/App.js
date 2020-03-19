@@ -5,6 +5,7 @@ import Tables from "./Components/Tables/Tables";
 import MarkerMap from "./Components/Maps/MarkerMap";
 import GoogleMap from "./Components/Maps/GoogleMap";
 import firebase from "./firebase";
+import Charts from "./Components/Charts/Charts";
 
 class App extends React.Component {
 	state = { loading: true };
@@ -39,6 +40,11 @@ class App extends React.Component {
 					/>
 					<Tables countriesData={this.state.all_countries} />
 					<GoogleMap />
+					<Charts
+						deaths={this.state.death_rate}
+						overview={this.state.overview}
+						countries={this.state.all_countries}
+					/>
 				</main>
 			</div>
 		);

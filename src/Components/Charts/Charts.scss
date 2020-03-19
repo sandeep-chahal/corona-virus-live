@@ -1,0 +1,41 @@
+.charts {
+	margin: auto;
+	display: flex;
+	margin-top: 5rem;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	width: 85%;
+	background-color: var(--primary-light);
+	border-radius: 3rem;
+
+	.main-header {
+		width: 100%;
+		text-align: center;
+		font-size: 4rem;
+		color: var(--white);
+		margin: 2rem;
+	}
+
+	.header {
+		font-size: 2rem;
+		color: var(--white);
+	}
+
+	.death-chart,
+	.pie-chart {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		padding: 3rem;
+		// width: 85%;
+	}
+
+	.pie-chart {
+	}
+	svg {
+		background-color: var(--white) !important;
+	}
+}
