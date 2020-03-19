@@ -20,8 +20,11 @@ const AllCountriesTable = ({ data, header }) => {
 							<TableCell>Region</TableCell>
 							<TableCell align="center">Confirmed</TableCell>
 							<TableCell align="center">Deaths</TableCell>
+							<TableCell align="center">New Deaths</TableCell>
 							<TableCell align="center">Recovered</TableCell>
 							<TableCell align="center">Critical</TableCell>
+							<TableCell align="center">New Cases</TableCell>
+							<TableCell align="center">Active Cases</TableCell>
 						</TableRow>
 					</TableHead>
 					<TableBody>
@@ -32,28 +35,51 @@ const AllCountriesTable = ({ data, header }) => {
 								</TableCell>
 								<TableCell align="center">
 									<NumberFormat
-										value={row.cases}
+										value={row.total_cases}
 										displayType={"text"}
 										thousandSeparator={true}
 									/>
 								</TableCell>
 								<TableCell align="center">
 									<NumberFormat
-										value={row.deaths}
+										value={row.total_deaths}
+										displayType={"text"}
+										thousandSeparator={true}
+									/>
+								</TableCell>
+								<TableCell align="center">
+									{row.new_deaths ? "+" : null}
+									<NumberFormat
+										value={row.new_deaths}
 										displayType={"text"}
 										thousandSeparator={true}
 									/>
 								</TableCell>
 								<TableCell align="center">
 									<NumberFormat
-										value={row.recovered}
+										value={row.total_recovered}
 										displayType={"text"}
 										thousandSeparator={true}
 									/>
 								</TableCell>
 								<TableCell align="center">
 									<NumberFormat
-										value={row.critical}
+										value={row.serious}
+										displayType={"text"}
+										thousandSeparator={true}
+									/>
+								</TableCell>
+								<TableCell align="center">
+									{row.new_cases ? "+" : null}
+									<NumberFormat
+										value={row.new_cases}
+										displayType={"text"}
+										thousandSeparator={true}
+									/>
+								</TableCell>
+								<TableCell align="center">
+									<NumberFormat
+										value={row.active_cases}
 										displayType={"text"}
 										thousandSeparator={true}
 									/>

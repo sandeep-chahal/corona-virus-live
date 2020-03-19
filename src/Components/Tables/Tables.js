@@ -10,22 +10,6 @@ const Tables = props => {
 				header="WorldWide"
 				data={props.countriesData}
 			></AllCountriesTable>
-			<AllCountriesTable
-				header="China"
-				data={props.countriesData}
-			></AllCountriesTable>
-			<AllCountriesTable
-				header="USA"
-				data={props.countriesData}
-			></AllCountriesTable>
-			<AllCountriesTable
-				header="Italy"
-				data={props.countriesData}
-			></AllCountriesTable>
-			<AllCountriesTable
-				header="Iran"
-				data={props.countriesData}
-			></AllCountriesTable>
 		</div>
 	);
 };
