@@ -2,7 +2,6 @@ import React from "react";
 import NavBar from "./Components/NavBar/NavBar";
 import Overview from "./Components/Overview/Overview";
 import Tables from "./Components/Tables/Tables";
-import MarkerMap from "./Components/Maps/MarkerMap";
 import GoogleMap from "./Components/Maps/GoogleMap";
 import firebase from "./firebase";
 import Charts from "./Components/Charts/Charts";
