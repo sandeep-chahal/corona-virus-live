@@ -3,6 +3,7 @@ import NavBar from "./Components/NavBar/NavBar";
 import Overview from "./Components/Overview/Overview";
 import Tables from "./Components/Tables/Tables";
 import MarkerMap from "./Components/Maps/MarkerMap";
+import GoogleMap from "./Components/Maps/GoogleMap";
 import firebase from "./firebase";
 
 class App extends React.Component {
@@ -37,7 +38,7 @@ class App extends React.Component {
 						totalSerious={parseInt(this.state.overview.serious)}
 					/>
 					<Tables countriesData={this.state.all_countries} />
-					<MarkerMap />
+					<GoogleMap />
 				</main>
 			</div>
 		);
