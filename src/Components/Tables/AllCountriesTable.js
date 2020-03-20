@@ -13,16 +13,34 @@ const AllCountriesTable = ({ data, header }) => {
 	const [sortedData, setSortedData] = useState(null);
 	const [orderBy, setOrderBy] = useState("total_cases");
 	const sortData = by => {
-		const newData = Object.keys(data).map(key => data[key]);
-		newData.sort((a, b) => (orderBy === by ? a[by] - b[by] : b[by] - a[by]));
-		setSortedData(newData);
+		(sortedData ? sortedData : data).sort((a, b) =>
+			orderBy === by ? a[by] - b[by] : b[by] - a[by]
+		);
 		if (by === orderBy) setOrderBy(null);
 		else setOrderBy(by);
 	};
 
+	const handleSearchInput = e => {
+		const value = e.target.value;
+		if (value.length > 1) {
+			searchData(value);
+		} else {
+			setSortedData(null);
+		}
+	};
+	const searchData = country => {
+		const newData = data.filter(item =>
+			item.country.toLowerCase().includes(country.toLowerCase())
+		);
+		setSortedData(newData);
+	};
+
 	return (
 		<div className="all-countries table-wrapper">
-			<div className="header">{header}</div>
+			<div className="header">
+				<span>{header}</span>
+				<input type="text" onChange={handleSearchInput} />
+			</div>
 			<div className="recovered-progress"></div>
 
 			<TableContainer component={Paper} className="table-container">
