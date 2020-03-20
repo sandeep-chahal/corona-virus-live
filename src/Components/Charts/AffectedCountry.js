@@ -28,11 +28,21 @@ const AffectedCountry = props => {
 	return (
 		<div className="pie-chart">
 			<Chart
+				style={{ marginBottom: "-2rem" }}
 				options={state.options}
 				series={state.series}
 				type="pie"
 				width="225"
 			/>
+			<div
+				style={{
+					marginBottom: "1rem",
+					fontSize: "0.8rem",
+					textAlign: "right"
+				}}
+			>
+				Affected/Not Affected Countries
+			</div>
 		</div>
 	);
 };
