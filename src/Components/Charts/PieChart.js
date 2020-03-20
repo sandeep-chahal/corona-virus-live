@@ -13,10 +13,10 @@ const PieChart = props => {
 	const state = {
 		series: [
 			parseInt(CoronavirusCases),
-			parseInt(Deaths),
 			parseInt(Recovered),
-			parseInt(serious),
-			parseInt(active)
+			parseInt(Deaths),
+			parseInt(active),
+			parseInt(serious)
 		],
 		options: {
 			chart: {
