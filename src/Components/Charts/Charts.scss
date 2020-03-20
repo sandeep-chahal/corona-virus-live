@@ -4,7 +4,7 @@
 	margin-top: 5rem;
 	flex-direction: row;
 	align-items: center;
-	justify-content: center;
+	justify-content: space-evenly;
 	flex-wrap: wrap;
 	width: 85%;
 	background-color: var(--primary-light);
@@ -28,14 +28,16 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-
 		padding: 3rem;
-		// width: 85%;
+		width {
+			width: 45%;
+		}
 	}
 
-	.pie-chart {
-	}
 	svg {
 		background-color: var(--white) !important;
+	}
+	.column-chart {
+		color: #000;
 	}
 }

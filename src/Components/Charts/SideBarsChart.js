@@ -5,9 +5,7 @@ const SideBarsChart = props => {
 	const state = {
 		series: [
 			{
-				data: props.countries
-					.filter((_, i) => i < 11)
-					.map(item => item.total_cases)
+				data: props.data.map(item => item[props.type])
 			}
 		],
 		options: {
@@ -19,7 +17,7 @@ const SideBarsChart = props => {
 				bar: {
 					barHeight: "100%",
 					distributed: true,
-					horizontal: true,
+					horizontal: props.horizontal,
 					dataLabels: {
 						position: "bottom"
 					}
@@ -38,7 +36,7 @@ const SideBarsChart = props => {
 				"#69d2e7"
 			],
 			dataLabels: {
-				enabled: true,
+				enabled: props.horizontal,
 				textAnchor: "start",
 				style: {
 					colors: ["#fff"]
@@ -56,9 +54,7 @@ const SideBarsChart = props => {
 				colors: ["#fff"]
 			},
 			xaxis: {
-				categories: props.countries
-					.filter((_, i) => i < 11)
-					.map(item => item.country)
+				categories: props.data.map(item => item.country)
 			},
 			yaxis: {
 				labels: {
@@ -66,7 +62,7 @@ const SideBarsChart = props => {
 				}
 			},
 			title: {
-				text: "Custom DataLabels",
+				text: props.title,
 				align: "center",
 				floating: true
 			},
@@ -96,9 +92,8 @@ const SideBarsChart = props => {
 				options={state.options}
 				series={state.series}
 				type="bar"
-				width="800"
+				width="500"
 			/>
-			<div className="header">overview</div>
 		</div>
 	);
 };
