@@ -46,6 +46,15 @@ const Overview = props => {
 				/>
 				<div className="overview-item-name">Total Serious</div>
 			</div>
+			<div className="overview-item total-active">
+				<CountUp
+					className="overview-item-count"
+					end={props.totalActive}
+					duration={1.5}
+					separator=","
+				/>
+				<div className="overview-item-name">Total Active</div>
+			</div>
 			<AffectedCountry affected={props.affected} />
 		</div>
 	);
