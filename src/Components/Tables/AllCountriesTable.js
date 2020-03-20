@@ -50,7 +50,7 @@ const AllCountriesTable = ({ data, header }) => {
 							<TableCell>Region</TableCell>
 							<TableCell align="center">
 								<TableSortLabel
-									direction={orderBy === "total_cases" ? "asc" : ""}
+									direction={orderBy === "total_cases" ? "asc" : "desc"}
 									onClick={() => sortData("total_cases")}
 								>
 									Confirmed
@@ -58,7 +58,7 @@ const AllCountriesTable = ({ data, header }) => {
 							</TableCell>
 							<TableCell align="center">
 								<TableSortLabel
-									direction={orderBy === "total_deaths" ? "asc" : ""}
+									direction={orderBy === "total_deaths" ? "asc" : "desc"}
 									onClick={() => sortData("total_deaths")}
 								>
 									Deaths
@@ -66,7 +66,7 @@ const AllCountriesTable = ({ data, header }) => {
 							</TableCell>
 							<TableCell align="center">
 								<TableSortLabel
-									direction={orderBy === "new_deaths" ? "asc" : ""}
+									direction={orderBy === "new_deaths" ? "asc" : "desc"}
 									onClick={() => sortData("new_deaths")}
 								>
 									New Deaths
@@ -74,7 +74,7 @@ const AllCountriesTable = ({ data, header }) => {
 							</TableCell>
 							<TableCell align="center">
 								<TableSortLabel
-									direction={orderBy === "total_recovered" ? "asc" : ""}
+									direction={orderBy === "total_recovered" ? "asc" : "desc"}
 									onClick={() => sortData("total_recovered")}
 								>
 									Recovered
@@ -82,7 +82,7 @@ const AllCountriesTable = ({ data, header }) => {
 							</TableCell>
 							<TableCell align="center">
 								<TableSortLabel
-									direction={orderBy === "serious" ? "asc" : ""}
+									direction={orderBy === "serious" ? "asc" : "desc"}
 									onClick={() => sortData("serious")}
 								>
 									Critical
@@ -90,7 +90,7 @@ const AllCountriesTable = ({ data, header }) => {
 							</TableCell>
 							<TableCell align="center">
 								<TableSortLabel
-									direction={orderBy === "new_cases" ? "asc" : ""}
+									direction={orderBy === "new_cases" ? "asc" : "desc"}
 									onClick={() => sortData("new_cases")}
 								>
 									New Cases
@@ -98,7 +98,7 @@ const AllCountriesTable = ({ data, header }) => {
 							</TableCell>
 							<TableCell align="center">
 								<TableSortLabel
-									direction={orderBy === "active_cases" ? "asc" : ""}
+									direction={orderBy === "active_cases" ? "asc" : "desc"}
 									onClick={() => sortData("active_cases")}
 								>
 									Active Cases

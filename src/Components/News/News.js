@@ -20,8 +20,8 @@ class News extends React.Component {
 				<div className="header">News On Corona Virus</div>
 				<div className="news-items">
 					{this.state.news
-						? this.state.news.articles.map(article => (
-								<Item article={article} key={article.publishedAt} />
+						? this.state.news.articles.map((article, i) => (
+								<Item article={article} key={article.publishedAt + i} />
 						  ))
 						: null}
 				</div>
