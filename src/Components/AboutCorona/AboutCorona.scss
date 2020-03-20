@@ -1,0 +1,68 @@
+.about-corona {
+	width: 85%;
+	background-color: var(--primary-light);
+	border-radius: 3rem;
+	padding: 3rem;
+	margin: auto;
+	margin-top: 3rem;
+	text-align: center;
+	color: var(--white-faded);
+	.what {
+		font-size: 3rem;
+		margin-bottom: 1rem;
+	}
+	.info {
+		font-size: 1.8rem;
+		letter-spacing: 2px;
+		margin-bottom: 3rem;
+		display: flex;
+		justify-content: space-evenly;
+
+		img {
+			width: 40rem;
+			border-radius: 1rem;
+		}
+		a {
+			display: block;
+			color: var(--white-faded);
+			font-size: 1.2rem;
+		}
+		.left {
+			width: 60%;
+		}
+		.right {
+			.item {
+				display: list-item;
+				margin-left: 15rem;
+				text-align: left;
+			}
+		}
+	}
+	.stop {
+		display: flex;
+		align-items: center;
+		justify-content: space-evenly;
+		.header {
+			font-size: 3rem;
+		}
+		text-align: left;
+		.header-small {
+			font-size: 2rem;
+			margin-top: 2rem;
+			margin-bottom: 1rem;
+		}
+		ul {
+			width: 80%;
+			margin: auto;
+			font-size: 1.8rem;
+		}
+		.left {
+		}
+		.right {
+		}
+	}
+	.src {
+		font-size: 1.2rem;
+		margin-top: 3rem;
+	}
+}
