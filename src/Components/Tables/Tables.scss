@@ -11,7 +11,7 @@
 		color: var(--white-faded);
 		margin-bottom: 2rem;
 	}
-	.table {
+	.table-wrapper {
 		margin: 2rem;
 		width: 45%;
 		&:first-child {
@@ -21,8 +21,21 @@
 		padding: 2rem;
 		border-radius: 2rem;
 	}
+	tbody {
+		overflow-y: auto;
+	}
+	.table-container {
+		overflow-y: hidden;
+	}
+
+	// tbody {
+	// 	display: inline-block;
+	// 	height: 40rem;
+	// 	overflow-y: auto;
+	// }
+
 	.MuiPaper-root {
-		height: 40rem;
+		// height: 40rem;
 	}
 
 	.MuiTable-root {
@@ -36,6 +49,16 @@
 		color: var(--white-faded);
 		font-size: 1.4rem;
 		font-family: "Fredoka One", sans-serif;
+	}
+
+	span {
+		.MuiTableSortLabel-icon {
+			opacity: 1;
+		}
+		&:hover,
+		&:active {
+			color: var(--white);
+		}
 	}
 }
 
