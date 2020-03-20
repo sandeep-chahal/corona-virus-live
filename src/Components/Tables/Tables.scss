@@ -10,6 +10,12 @@
 		font-size: 3rem;
 		color: var(--white-faded);
 		margin-bottom: 2rem;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		input {
+			padding: 3px;
+		}
 	}
 	.table-wrapper {
 		margin: 2rem;
