@@ -1,5 +1,6 @@
 import React from "react";
 import "./Overview.scss";
+import AffectedCountry from "../Charts/AffectedCountry";
 
 import CountUp from "react-countup";
 
@@ -45,6 +46,7 @@ const Overview = props => {
 				/>
 				<div className="overview-item-name">Total Serious</div>
 			</div>
+			<AffectedCountry affected={props.affected} />
 		</div>
 	);
 };

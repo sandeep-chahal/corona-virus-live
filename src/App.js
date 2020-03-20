@@ -38,6 +38,7 @@ class App extends React.Component {
 						totalDeaths={parseInt(this.state.overview.Deaths)}
 						totalRecovered={parseInt(this.state.overview.Recovered)}
 						totalSerious={parseInt(this.state.overview.serious)}
+						affected={this.state.all_countries.length}
 					/>
 					<Tables countriesData={this.state.all_countries} />
 					<GoogleMap />
