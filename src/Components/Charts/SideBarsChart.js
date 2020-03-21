@@ -54,7 +54,7 @@ const SideBarsChart = props => {
 				colors: ["#fff"]
 			},
 			xaxis: {
-				categories: props.data.map(item => item.country)
+				categories: props.data.map(item => item.region)
 			},
 			yaxis: {
 				labels: {

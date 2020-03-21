@@ -38,7 +38,7 @@ const ColumnChart = props => {
 				colors: ["transparent"]
 			},
 			xaxis: {
-				categories: props.data.map(item => item.country)
+				categories: props.data.map(item => item.region)
 			},
 			yaxis: {
 				title: {

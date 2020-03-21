@@ -25,6 +25,7 @@ class App extends React.Component {
 				console.log(worldWide, usaData);
 				this.setState({
 					overview: data.overview,
+					death_rate: data.death_rate,
 					worldWide,
 					usaData,
 					loading: false
@@ -51,19 +52,17 @@ class App extends React.Component {
 						affected={this.state.worldWide.length}
 					/>
 					<Tables
-						// worldWide={this.state.worldWide}
-						// usaData={this.state.usaData}
 						data={{
 							worldWide: this.state.worldWide,
 							usaData: this.state.usaData
 						}}
 					/>
 					<GoogleMap />
-					{/* <Charts
+					<Charts
 						deaths={this.state.death_rate}
 						overview={this.state.overview}
 						countries={this.state.worldWide}
-					/> */}
+					/>
 					<AboutCorona />
 					<UsefulVideos />
 					<News />
