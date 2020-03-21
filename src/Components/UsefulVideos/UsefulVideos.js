@@ -60,6 +60,15 @@ const UsefulVideos = props => {
 					allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
 					allowFullScreen
 				></iframe>
+				<iframe
+					title="The Coronavirus Vaccine Explained | COVID-19"
+					width="560"
+					height="315"
+					src="https://www.youtube-nocookie.com/embed/SSuxVwMkcpA"
+					frameBorder="0"
+					allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+					allowFullScreen
+				></iframe>
 			</div>
 		</div>
 	);
