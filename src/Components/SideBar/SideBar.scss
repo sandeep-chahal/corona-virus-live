@@ -1,4 +1,4 @@
-nav {
+.bm-item-list {
 	background-color: #fff;
 	font-size: 3rem;
 	a {
@@ -7,6 +7,27 @@ nav {
 			color: var(--nav-red);
 			margin-left: 5rem;
 			text-decoration: none;
+		}
+	}
+	.ko-fi {
+		margin-top: 2rem;
+		cursor: pointer;
+		text-decoration: none;
+		margin-left: auto;
+		display: flex;
+		align-items: center;
+		justify-content: space-evenly;
+		border-radius: 5px;
+		padding: 0.5rem;
+		width: 30rem;
+		img {
+			width: 2.5rem;
+			animation: shake 2s infinite;
+		}
+		span {
+			color: var(--white-faded);
+			font-size: 1.6rem;
+			margin-left: 1rem;
 		}
 	}
 }
@@ -29,27 +50,7 @@ nav {
 	position: fixed;
 	height: 100%;
 }
-.ko-fi {
-	margin-top: 2rem;
-	cursor: pointer;
-	text-decoration: none;
-	margin-left: auto;
-	display: flex;
-	align-items: center;
-	justify-content: space-evenly;
-	border-radius: 5px;
-	padding: 0.5rem;
-	width: 30rem;
-	img {
-		width: 2.5rem;
-		animation: shake 2s infinite;
-	}
-	span {
-		color: var(--white-faded);
-		font-size: 1.6rem;
-		margin-left: 1rem;
-	}
-}
+
 @keyframes shake {
 	0% {
 		transform: rotate(0deg);
