@@ -57,7 +57,7 @@ const AllCountriesTable = ({ data }) => {
 			<div className="recovered-progress"></div>
 
 			<TableContainer component={Paper} className="table-container">
-				<Table aria-label="sticky table" className="table">
+				<Table aria-label="sticky table" stickyHeader className="table">
 					<TableHead>
 						<TableRow>
 							<TableCell>Region</TableCell>

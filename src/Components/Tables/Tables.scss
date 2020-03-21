@@ -30,8 +30,11 @@
 	tbody {
 		overflow-y: auto;
 	}
-	.table-container {
-		// overflow-y: hidden;
+
+	.MuiTableHead-root {
+		th {
+			background-color: var(--primary-dark);
+		}
 	}
 
 	.MuiPaper-root {
