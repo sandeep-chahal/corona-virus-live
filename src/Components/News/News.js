@@ -9,9 +9,11 @@ class News extends React.Component {
 	componentDidMount() {
 		fetch(
 			"http://newsapi.org/v2/everything?q=corona&apiKey=e7793d72038d41f497c354452e3e105a"
-		).then(res => {
-			res.json().then(data => this.setState({ news: data }));
-		});
+		)
+			.then(res => {
+				res.json().then(data => this.setState({ news: data }));
+			})
+			.catch(e => this.setState({ news: null }));
 	}
 
 	render() {

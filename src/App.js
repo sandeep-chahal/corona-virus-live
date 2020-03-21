@@ -9,6 +9,7 @@ import News from "./Components/News/News";
 import AboutCorona from "./Components/AboutCorona/AboutCorona";
 import UsefulVideos from "./Components/UsefulVideos/UsefulVideos";
 import Updates from "./Components/Updates/Updates";
+import About from "./Components/About/About";
 
 class App extends React.Component {
 	state = { loading: true };
@@ -69,6 +70,7 @@ class App extends React.Component {
 					<UsefulVideos />
 					<Updates updates={this.state.updates} />
 					<News />
+					<About />
 				</main>
 			</div>
 		);
