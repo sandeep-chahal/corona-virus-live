@@ -4,7 +4,7 @@ import "./NavBar.scss";
 const NavBar = props => {
 	return (
 		<nav className="nav">
-			<div className="items">
+			<div>
 				<a href="#overview" className="nav-item">
 					Overview
 				</a>

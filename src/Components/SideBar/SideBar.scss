@@ -1,0 +1,31 @@
+nav {
+	background-color: #fff;
+	font-size: 3rem;
+	a {
+		padding-top: 2rem;
+		&:last-child {
+			color: var(--nav-red);
+			margin-left: 5rem;
+			text-decoration: none;
+		}
+	}
+}
+
+.bm-burger-button {
+	position: fixed;
+	width: 36px;
+	height: 30px;
+	left: 10px;
+	top: 10px;
+	z-index: 100;
+	span {
+		background-color: #fff;
+		&:last-child {
+			display: none;
+		}
+	}
+}
+.bm-menu-wrap {
+	position: fixed;
+	height: 100%;
+}

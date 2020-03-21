@@ -17,10 +17,10 @@ const Updates = props => {
 				</a>
 			</div>
 			<div className="items">
-				{props.updates.map(item => (
-					<Collapsible className="date collapse" trigger={item.date}>
-						{item.logs.map(item => (
-							<li className="li">
+				{props.updates.map((item, j) => (
+					<Collapsible className="date collapse" trigger={item.date} key={j}>
+						{item.logs.map((item, i) => (
+							<li className="li" key={i + j}>
 								{item.title}
 								<p className="time">(at {item.time.slice(0, 5)})</p>
 								<a href={item.source} target="_blank">

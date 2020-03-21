@@ -10,8 +10,10 @@ import AboutCorona from "./Components/AboutCorona/AboutCorona";
 import UsefulVideos from "./Components/UsefulVideos/UsefulVideos";
 import Updates from "./Components/Updates/Updates";
 import About from "./Components/About/About";
+import SideBar from "./Components/SideBar/SideBar";
 
 class App extends React.Component {
+	width = window.innerWidth;
 	state = { loading: true };
 	componentDidMount() {
 		firebase
@@ -23,8 +25,6 @@ class App extends React.Component {
 				const data = snap.data();
 				const worldWide = this.filter(data.all_countries);
 				const usaData = this.filter(data.usa_data);
-				console.clear();
-				console.log(worldWide, usaData);
 				this.setState({
 					overview: data.overview,
 					death_rate: data.death_rate,
@@ -44,7 +44,8 @@ class App extends React.Component {
 		if (this.state.loading) return <div>Loading....</div>;
 		return (
 			<div className="App">
-				<NavBar />
+				{this.width < 700 ? <SideBar /> : <NavBar />}
+
 				<main>
 					<Overview
 						totalCases={parseInt(this.state.overview.CoronavirusCases)}
