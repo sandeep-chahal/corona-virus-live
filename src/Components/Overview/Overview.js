@@ -6,7 +6,7 @@ import CountUp from "react-countup";
 
 const Overview = props => {
 	return (
-		<div className="overview">
+		<div className="overview" id="overview">
 			<div className="overview-item total-cases">
 				<CountUp
 					className="overview-item-count"

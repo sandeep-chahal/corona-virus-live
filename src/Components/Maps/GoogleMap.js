@@ -3,7 +3,7 @@ import "./Maps.scss";
 
 const GoogleMap = props => {
 	return (
-		<dv className="google-map">
+		<dv className="google-map" id="maps">
 			<div className="header">World Map</div>
 			<div className="info">
 				you can zoom in and click on circle to get more info...

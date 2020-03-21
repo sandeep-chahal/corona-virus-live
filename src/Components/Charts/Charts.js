@@ -7,7 +7,7 @@ import ColumnChart from "./ColumnChart";
 
 const Charts = props => {
 	return (
-		<div className="charts">
+		<div className="charts" id="charts">
 			<div className="main-header">Charts</div>
 			<DeathChart deaths={props.deaths} />
 			<PieChart overview={props.overview} />

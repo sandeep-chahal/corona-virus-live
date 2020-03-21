@@ -3,7 +3,7 @@ import "./AboutCorona.scss";
 
 const AboutCorona = props => {
 	return (
-		<div className="about-corona">
+		<div className="about-corona" id="about-corona">
 			<div className="what">What is Corona Virus</div>
 			<div className="info">
 				<div>

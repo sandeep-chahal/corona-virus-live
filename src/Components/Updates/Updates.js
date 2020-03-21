@@ -5,7 +5,7 @@ import Collapsible from "react-collapsible";
 const Updates = props => {
 	if (!props.updates.length) return null;
 	return (
-		<div className="updates">
+		<div className="updates" id="updates">
 			<div className="header">
 				Updates{" "}
 				<a

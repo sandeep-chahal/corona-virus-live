@@ -5,12 +5,27 @@ const NavBar = props => {
 	return (
 		<nav className="nav">
 			<div className="items">
-				<div className="nav-item">Overview</div>
-				<div className="nav-item">Charts</div>
-				<div className="nav-item">Map</div>
-				<div className="nav-item">News</div>
-				<div className="nav-item">About COVID-19</div>
-				<div class="btn-container"></div>
+				<a href="#overview" className="nav-item">
+					Overview
+				</a>
+				<a href="#charts" className="nav-item">
+					Charts
+				</a>
+				<a href="#maps" className="nav-item">
+					Map
+				</a>
+				<a href="#news" className="nav-item">
+					News
+				</a>
+				<a href="#updates" className="nav-item">
+					Updates
+				</a>
+				<a href="#about-corona" className="nav-item">
+					About COVID-19
+				</a>
+				<a href="#about" class="nav-item">
+					About Me
+				</a>
 			</div>
 			<a
 				href="https://ko-fi.com/sandeep"

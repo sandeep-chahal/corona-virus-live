@@ -3,7 +3,7 @@ import "./About.scss";
 
 const About = props => {
 	return (
-		<div className="about">
+		<div className="about" id="about">
 			<div className="header">About Me</div>
 			<p>My Name is Sandeep Chahal. Thanks for checking out this website.</p>
 			<p>

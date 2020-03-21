@@ -1,4 +1,8 @@
 .nav {
+	position: fixed;
+	z-index: 100;
+	top: 0;
+	left: 0;
 	display: flex;
 	width: 100vw;
 	padding: 1.5rem;
@@ -15,6 +19,8 @@
 	&-item {
 		margin-left: 5rem;
 		cursor: pointer;
+		color: var(--nav-red);
+		text-decoration: none;
 	}
 
 	.ko-fi {
