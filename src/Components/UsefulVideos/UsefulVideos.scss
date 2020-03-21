@@ -1,0 +1,22 @@
+.useful-video {
+	width: 85%;
+	border-radius: 3rem;
+	margin: 3rem auto;
+	padding: 3rem;
+	background-color: var(--primary-light);
+	text-align: center;
+
+	.header {
+		font-size: 3rem;
+	}
+
+	.videos {
+		padding: 3rem;
+		display: flex;
+		flex-wrap: wrap;
+
+		iframe {
+			margin: 1rem;
+		}
+	}
+}
