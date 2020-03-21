@@ -65,7 +65,7 @@ const ColumnChart = props => {
 				options={state.options}
 				series={state.series}
 				type="bar"
-				width={width < 650 ? 400 : 750}
+				width={width < 650 ? 350 : 750}
 				height={width < 650 ? 550 : 350}
 			/>
 		</div>
