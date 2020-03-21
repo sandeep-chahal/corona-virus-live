@@ -15,6 +15,7 @@ class News extends React.Component {
 	}
 
 	render() {
+		if (!this.state.news) return null;
 		return (
 			<div className="news">
 				<div className="header">News On Corona Virus</div>
