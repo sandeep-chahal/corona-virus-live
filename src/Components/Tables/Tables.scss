@@ -59,6 +59,17 @@
 		&:active {
 			color: var(--white);
 		}
+
+		select {
+			padding: 0.5rem 1rem;
+			font-size: 2.5rem;
+			background-color: var(--primary-light);
+			color: var(--white-faded);
+			font-family: "Fredoka One", sans-serif;
+			border: 1px solid var(--white);
+			border-radius: 5px;
+			outline: none;
+		}
 	}
 }
 

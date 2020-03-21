@@ -7,8 +7,10 @@ const Tables = props => {
 	return (
 		<div className="tables">
 			<AllCountriesTable
-				header="WorldWide"
-				data={props.countriesData}
+				// header="WorldWide"
+				// worldWide={props.worldWide}
+				// usaData={props.usaData}
+				data={props.data}
 			></AllCountriesTable>
 		</div>
 	);

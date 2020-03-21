@@ -19,12 +19,20 @@ class App extends React.Component {
 			.get()
 			.then(snap => {
 				const data = snap.data();
-				const all_countries = this.filter(snap.data().all_countries);
-				this.setState({ ...data, all_countries, loading: false });
+				const worldWide = this.filter(data.all_countries);
+				const usaData = this.filter(data.usa_data);
+				console.clear();
+				console.log(worldWide, usaData);
+				this.setState({
+					overview: data.overview,
+					worldWide,
+					usaData,
+					loading: false
+				});
 			});
 	}
 	filter = data => {
-		data = Object.keys(data).map(key => ({ country: key, ...data[key] }));
+		data = Object.keys(data).map(key => ({ region: key, ...data[key] }));
 		data.sort((a, b) => b.total_cases - a.total_cases);
 		return data;
 	};
@@ -40,15 +48,22 @@ class App extends React.Component {
 						totalRecovered={parseInt(this.state.overview.Recovered)}
 						totalSerious={parseInt(this.state.overview.serious)}
 						totalActive={parseInt(this.state.overview.active)}
-						affected={this.state.all_countries.length}
+						affected={this.state.worldWide.length}
 					/>
-					<Tables countriesData={this.state.all_countries} />
+					<Tables
+						// worldWide={this.state.worldWide}
+						// usaData={this.state.usaData}
+						data={{
+							worldWide: this.state.worldWide,
+							usaData: this.state.usaData
+						}}
+					/>
 					<GoogleMap />
-					<Charts
+					{/* <Charts
 						deaths={this.state.death_rate}
 						overview={this.state.overview}
-						countries={this.state.all_countries}
-					/>
+						countries={this.state.worldWide}
+					/> */}
 					<AboutCorona />
 					<UsefulVideos />
 					<News />

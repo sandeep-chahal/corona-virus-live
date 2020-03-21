@@ -9,11 +9,13 @@ import TableSortLabel from "@material-ui/core/TableSortLabel";
 import Paper from "@material-ui/core/Paper";
 import NumberFormat from "react-number-format";
 
-const AllCountriesTable = ({ data, header }) => {
+const AllCountriesTable = ({ data }) => {
 	const [sortedData, setSortedData] = useState(null);
 	const [orderBy, setOrderBy] = useState("total_cases");
+	const [selected, setSelected] = useState("worldWide");
+
 	const sortData = by => {
-		(sortedData ? sortedData : data).sort((a, b) =>
+		(sortedData ? sortedData : data[selected]).sort((a, b) =>
 			orderBy === by ? a[by] - b[by] : b[by] - a[by]
 		);
 		if (by === orderBy) setOrderBy(null);
@@ -28,17 +30,28 @@ const AllCountriesTable = ({ data, header }) => {
 			setSortedData(null);
 		}
 	};
-	const searchData = country => {
-		const newData = data.filter(item =>
-			item.country.toLowerCase().includes(country.toLowerCase())
+	const searchData = region => {
+		const newData = data[selected].filter(item =>
+			item.region.toLowerCase().includes(region.toLowerCase())
 		);
 		setSortedData(newData);
+	};
+
+	const handleDataChange = e => {
+		setSelected(e.target.value);
+		setSortedData(null);
+		setOrderBy("total_cases");
 	};
 
 	return (
 		<div className="all-countries table-wrapper">
 			<div className="header">
-				<span>{header}</span>
+				<span>
+					<select onClick={handleDataChange}>
+						<option value="worldWide">WorldWide</option>
+						<option value="usaData">USA</option>
+					</select>
+				</span>
 				<input type="text" onChange={handleSearchInput} placeholder="search" />
 			</div>
 			<div className="recovered-progress"></div>
@@ -80,14 +93,16 @@ const AllCountriesTable = ({ data, header }) => {
 									Recovered
 								</TableSortLabel>
 							</TableCell>
-							<TableCell align="center">
-								<TableSortLabel
-									direction={orderBy === "serious" ? "asc" : "desc"}
-									onClick={() => sortData("serious")}
-								>
-									Critical
-								</TableSortLabel>
-							</TableCell>
+							{selected === "usaData" ? null : (
+								<TableCell align="center">
+									<TableSortLabel
+										direction={orderBy === "serious" ? "asc" : "desc"}
+										onClick={() => sortData("serious")}
+									>
+										Critical
+									</TableSortLabel>
+								</TableCell>
+							)}
 							<TableCell align="center">
 								<TableSortLabel
 									direction={orderBy === "new_cases" ? "asc" : "desc"}
@@ -107,10 +122,10 @@ const AllCountriesTable = ({ data, header }) => {
 						</TableRow>
 					</TableHead>
 					<TableBody>
-						{(sortedData ? sortedData : data).map(row => (
-							<TableRow key={row.country}>
+						{(sortedData ? sortedData : data[selected] || []).map(row => (
+							<TableRow key={row.region}>
 								<TableCell component="th" scope="row">
-									{row.country}
+									{row.region}
 								</TableCell>
 								<TableCell align="center">
 									<NumberFormat
@@ -141,13 +156,15 @@ const AllCountriesTable = ({ data, header }) => {
 										thousandSeparator={true}
 									/>
 								</TableCell>
-								<TableCell align="center">
-									<NumberFormat
-										value={row.serious}
-										displayType={"text"}
-										thousandSeparator={true}
-									/>
-								</TableCell>
+								{selected === "usaData" ? null : (
+									<TableCell align="center">
+										<NumberFormat
+											value={row.serious}
+											displayType={"text"}
+											thousandSeparator={true}
+										/>
+									</TableCell>
+								)}
 								<TableCell align="center">
 									{row.new_cases ? "+" : null}
 									<NumberFormat
