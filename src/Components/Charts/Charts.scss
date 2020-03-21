@@ -1,3 +1,4 @@
+@import "../../mediaQuery.scss";
 .charts {
 	margin: auto;
 	display: flex;
@@ -9,6 +10,12 @@
 	width: 85%;
 	background-color: var(--primary-light);
 	border-radius: 3rem;
+
+	@include res(phone) {
+		width: 100%;
+		border-radius: 1rem;
+		padding: 1rem;
+	}
 
 	.main-header {
 		width: 100%;
@@ -39,5 +46,7 @@
 	}
 	.column-chart {
 		color: #000;
+	}
+	@include res(phone) {
 	}
 }

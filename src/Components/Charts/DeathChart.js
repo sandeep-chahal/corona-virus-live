@@ -2,6 +2,7 @@ import React from "react";
 import Chart from "react-apexcharts";
 
 const DeathCharts = props => {
+	var width = window.innerWidth;
 	const state = {
 		options: {
 			chart: {
@@ -27,7 +28,7 @@ const DeathCharts = props => {
 				options={state.options}
 				series={state.series}
 				type="line"
-				width="500"
+				width={width < 650 ? 350 : 450}
 			/>
 			<div className="header">Total Deaths</div>
 		</div>

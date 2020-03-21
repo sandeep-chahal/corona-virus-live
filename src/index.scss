@@ -7,8 +7,12 @@
 	padding: 0;
 	box-sizing: border-box;
 }
+@import "./mediaQuery.scss";
 html {
 	font-size: 62%;
+	@include res(phone) {
+		font-size: 50%;
+	}
 
 	--white: #fff;
 	--white-faded: rgb(228, 228, 228);

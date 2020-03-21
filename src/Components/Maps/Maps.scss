@@ -1,38 +1,4 @@
-.marker-map {
-	background-color: var(--primary-light);
-	width: 80%;
-	margin: auto;
-	padding: 3rem;
-	display: flex;
-
-	.map-options {
-		display: flex;
-		flex-direction: column;
-		margin: 0 auto;
-		text-align: center;
-		justify-content: left;
-
-		.notes {
-			.header {
-				font-size: 3rem;
-				margin-bottom: 1.5rem;
-			}
-			color: var(--white);
-			padding: 1rem;
-			letter-spacing: 1px;
-		}
-
-		select,
-		option {
-			padding: 0.5rem;
-			margin: 1rem;
-		}
-	}
-
-	.marker {
-		cursor: pointer;
-	}
-}
+@import "../../mediaQuery.scss";
 
 .google-map {
 	margin: auto;
@@ -45,8 +11,18 @@
 	padding: 3rem;
 	background-color: var(--primary-light);
 	color: var(--white);
+
+	@include res(phone) {
+		width: 100%;
+		padding: 1rem;
+		border-radius: 1rem;
+		height: 80vh;
+	}
 	.header {
 		font-size: 4rem;
+		@include res(phone) {
+			font-size: 3rem;
+		}
 	}
 	.info {
 		font-size: 1.5rem;

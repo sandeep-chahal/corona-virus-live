@@ -1,3 +1,5 @@
+@import "../../mediaQuery.scss";
+
 .about {
 	width: 85%;
 	background-color: var(--primary-light);
@@ -5,12 +7,23 @@
 	border-radius: 3rem;
 	padding: 2rem;
 	text-align: center;
+
+	@include res(phone) {
+		width: 100%;
+		margin-top: 1rem;
+	}
 	.header,
 	.source {
 		font-size: 3rem;
+		@include res(phone) {
+			font-size: 1.6rem;
+		}
 	}
 	p {
 		font-size: 2rem;
+		@include res(phone) {
+			font-size: 1.5rem;
+		}
 	}
 	.btn {
 		display: inline-block;

@@ -2,6 +2,7 @@ import React from "react";
 import Chart from "react-apexcharts";
 
 const SideBarsChart = props => {
+	var width = window.innerWidth;
 	const state = {
 		series: [
 			{
@@ -11,12 +12,12 @@ const SideBarsChart = props => {
 		options: {
 			chart: {
 				type: "bar",
-				height: 380
+				height: width < 650 ? 500 : 380
 			},
 			plotOptions: {
 				bar: {
 					barHeight: "100%",
-					distributed: true,
+					distributed: width < 650 ? false : true,
 					horizontal: props.horizontal,
 					dataLabels: {
 						position: "bottom"
@@ -92,7 +93,8 @@ const SideBarsChart = props => {
 				options={state.options}
 				series={state.series}
 				type="bar"
-				width="500"
+				width={width < 650 ? 350 : 500}
+				height={width < 650 ? 600 : 500}
 			/>
 		</div>
 	);

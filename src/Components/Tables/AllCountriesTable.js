@@ -10,6 +10,7 @@ import Paper from "@material-ui/core/Paper";
 import NumberFormat from "react-number-format";
 
 const AllCountriesTable = ({ data }) => {
+	var width = window.innerWidth;
 	const [sortedData, setSortedData] = useState(null);
 	const [orderBy, setOrderBy] = useState("total_cases");
 	const [selected, setSelected] = useState("worldWide");
@@ -57,7 +58,12 @@ const AllCountriesTable = ({ data }) => {
 			<div className="recovered-progress"></div>
 
 			<TableContainer component={Paper} className="table-container">
-				<Table aria-label="sticky table" stickyHeader className="table">
+				<Table
+					aria-label="sticky table"
+					stickyHeader
+					className="table"
+					dense={width < 650}
+				>
 					<TableHead>
 						<TableRow>
 							<TableCell>Region</TableCell>

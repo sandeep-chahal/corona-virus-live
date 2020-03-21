@@ -1,3 +1,5 @@
+@import "../../mediaQuery.scss";
+
 .about-corona {
 	width: 85%;
 	background-color: var(--primary-light);
@@ -7,6 +9,13 @@
 	margin-top: 3rem;
 	text-align: center;
 	color: var(--white-faded);
+
+	@include res(phone) {
+		width: 100%;
+		border-radius: 1rem;
+		padding: 1rem;
+	}
+
 	.what {
 		font-size: 3rem;
 		margin-bottom: 1rem;
@@ -18,9 +27,16 @@
 		display: flex;
 		justify-content: space-evenly;
 
+		@include res(phone) {
+			flex-direction: column;
+		}
+
 		img {
 			width: 40rem;
 			border-radius: 1rem;
+			@include res(phone) {
+				margin-top: 1rem;
+			}
 		}
 		a {
 			display: block;
@@ -29,12 +45,19 @@
 		}
 		.left {
 			width: 60%;
+			@include res(phone) {
+				width: 100%;
+				text-align: center;
+			}
 		}
 		.right {
 			.item {
 				display: list-item;
 				margin-left: 15rem;
 				text-align: left;
+				@include res(phone) {
+					margin-left: 5rem;
+				}
 			}
 		}
 	}
@@ -42,6 +65,9 @@
 		display: flex;
 		align-items: center;
 		justify-content: space-evenly;
+		@include res(phone) {
+			flex-direction: column;
+		}
 		.header {
 			font-size: 3rem;
 		}
@@ -55,10 +81,6 @@
 			width: 80%;
 			margin: auto;
 			font-size: 1.8rem;
-		}
-		.left {
-		}
-		.right {
 		}
 	}
 	.src {

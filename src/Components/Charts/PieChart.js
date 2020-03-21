@@ -2,6 +2,7 @@ import React from "react";
 import Chart from "react-apexcharts";
 
 const PieChart = props => {
+	var width = window.innerWidth;
 	const {
 		CoronavirusCases,
 		Deaths,
@@ -28,19 +29,6 @@ const PieChart = props => {
 				"Total Death",
 				"Total Active",
 				"Serious"
-			],
-			responsive: [
-				{
-					breakpoint: 480,
-					options: {
-						chart: {
-							width: 200
-						},
-						legend: {
-							position: "bottom"
-						}
-					}
-				}
 			]
 		}
 	};
@@ -51,7 +39,8 @@ const PieChart = props => {
 				options={state.options}
 				series={state.series}
 				type="pie"
-				width="450"
+				width={width < 650 ? 400 : 450}
+				height={width < 650 ? 600 : 450}
 			/>
 			<div className="header">overview</div>
 		</div>

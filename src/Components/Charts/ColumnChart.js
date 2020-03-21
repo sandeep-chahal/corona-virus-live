@@ -2,6 +2,7 @@ import React from "react";
 import Chart from "react-apexcharts";
 
 const ColumnChart = props => {
+	var width = window.innerWidth;
 	const state = {
 		series: [
 			{
@@ -20,7 +21,7 @@ const ColumnChart = props => {
 		options: {
 			chart: {
 				type: "bar",
-				height: 350
+				height: width < 650 ? 700 : 350
 			},
 			plotOptions: {
 				bar: {
@@ -64,7 +65,8 @@ const ColumnChart = props => {
 				options={state.options}
 				series={state.series}
 				type="bar"
-				width="750"
+				width={width < 650 ? 400 : 750}
+				height={width < 650 ? 550 : 350}
 			/>
 		</div>
 	);
