@@ -41,7 +41,18 @@ class App extends React.Component {
 		return data;
 	};
 	render() {
-		if (this.state.loading) return <div>Loading....</div>;
+		if (this.state.loading)
+			return (
+				<div className="spinner-wrapper">
+					<div className="spinner">
+						<div className="rect1"></div>
+						<div className="rect2"></div>
+						<div className="rect3"></div>
+						<div className="rect4"></div>
+						<div className="rect5"></div>
+					</div>
+				</div>
+			);
 		return (
 			<div className="App">
 				{this.width < 700 ? <SideBar /> : <NavBar />}
