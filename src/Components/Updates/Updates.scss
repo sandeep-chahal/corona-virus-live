@@ -1,0 +1,41 @@
+.updates {
+	width: 85%;
+	background: var(--primary-light);
+	margin: auto;
+	padding: 3rem;
+	border-radius: 3rem;
+	margin-top: 3rem;
+
+	.header {
+		text-align: center;
+		font-size: 3rem;
+	}
+
+	.items > div {
+		span {
+			margin: 1rem;
+			display: block;
+			width: 100%;
+			// border: 1px solid #ccc;
+			background-color: var(--primary-dark);
+			color: var(--white-faded);
+			padding: 0.5rem;
+			font-size: 2rem;
+		}
+		& > div {
+			margin-left: 3rem;
+			font-size: 1.6rem;
+			background-color: var(--white);
+			color: var(--primary-light);
+			padding-left: 1rem;
+		}
+	}
+
+	.time {
+		display: inline;
+		margin: 0 1rem;
+	}
+	a {
+		font-size: 1rem;
+	}
+}

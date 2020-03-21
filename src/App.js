@@ -8,6 +8,7 @@ import Charts from "./Components/Charts/Charts";
 import News from "./Components/News/News";
 import AboutCorona from "./Components/AboutCorona/AboutCorona";
 import UsefulVideos from "./Components/UsefulVideos/UsefulVideos";
+import Updates from "./Components/Updates/Updates";
 
 class App extends React.Component {
 	state = { loading: true };
@@ -28,6 +29,7 @@ class App extends React.Component {
 					death_rate: data.death_rate,
 					worldWide,
 					usaData,
+					updates: data.updates,
 					loading: false
 				});
 			});
@@ -65,6 +67,7 @@ class App extends React.Component {
 					/>
 					<AboutCorona />
 					<UsefulVideos />
+					<Updates updates={this.state.updates} />
 					<News />
 				</main>
 			</div>
