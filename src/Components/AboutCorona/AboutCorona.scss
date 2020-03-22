@@ -30,6 +30,9 @@
 		@include res(phone) {
 			flex-direction: column;
 		}
+		@include res(tab) {
+			flex-direction: column;
+		}
 
 		img {
 			width: 40rem;
@@ -49,6 +52,10 @@
 				width: 100%;
 				text-align: center;
 			}
+			@include res(tab) {
+				width: 100%;
+				text-align: center;
+			}
 		}
 		.right {
 			.item {
@@ -58,6 +65,12 @@
 				@include res(phone) {
 					margin-left: 5rem;
 				}
+				@include res(tab) {
+					margin-left: 5rem;
+				}
+			}
+			@include res(tab) {
+				margin-top: 3rem;
 			}
 		}
 	}
@@ -66,6 +79,9 @@
 		align-items: center;
 		justify-content: space-evenly;
 		@include res(phone) {
+			flex-direction: column;
+		}
+		@include res(tab) {
 			flex-direction: column;
 		}
 		.header {

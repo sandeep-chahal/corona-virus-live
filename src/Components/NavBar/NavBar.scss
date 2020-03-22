@@ -26,6 +26,10 @@
 		cursor: pointer;
 		color: var(--nav-red);
 		text-decoration: none;
+		@include res(tab) {
+			margin-left: 2rem;
+			font-size: 1.2rem;
+		}
 	}
 
 	.ko-fi {
@@ -36,6 +40,7 @@
 		align-items: center;
 		border-radius: 5px;
 		padding: 0.5rem;
+
 		img {
 			width: 2.5rem;
 			animation: shake 2s infinite;
@@ -44,6 +49,14 @@
 			color: var(--white-faded);
 			font-size: 1.6rem;
 			margin-left: 1rem;
+		}
+		@include res(tab) {
+			span {
+				font-size: 1.2rem;
+			}
+			img {
+				width: 2rem;
+			}
 		}
 	}
 }

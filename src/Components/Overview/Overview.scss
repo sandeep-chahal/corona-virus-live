@@ -31,6 +31,10 @@
 				font-size: 2.5rem;
 				margin: 0 2rem;
 			}
+			@include res(tab) {
+				font-size: 2.5rem;
+				margin: 0 2rem;
+			}
 		}
 		.overview-item-name {
 			font-size: 1.2rem;
@@ -42,6 +46,9 @@
 
 	.pie-chart {
 		@include res(phone) {
+			display: none;
+		}
+		@include res(tab) {
 			display: none;
 		}
 	}
