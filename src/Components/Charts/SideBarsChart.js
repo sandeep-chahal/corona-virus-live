@@ -93,8 +93,8 @@ const SideBarsChart = props => {
 				options={state.options}
 				series={state.series}
 				type="bar"
-				width={width < 650 ? 350 : 500}
-				height={width < 650 ? 600 : 350}
+				width={width < 650 ? 325 : 500}
+				height={width < 650 ? 450 : 350}
 			/>
 		</div>
 	);

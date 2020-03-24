@@ -58,6 +58,7 @@ class App extends React.Component {
 				{this.width < 700 ? <SideBar /> : <NavBar />}
 
 				<main>
+					<h1>Corona Virus Live Dashboard</h1>
 					<Overview
 						totalCases={parseInt(this.state.overview.CoronavirusCases)}
 						totalDeaths={parseInt(this.state.overview.Deaths)}
