@@ -55,7 +55,7 @@ const AllCountriesTable = ({ data }) => {
 				</span>
 				<input type="text" onChange={handleSearchInput} placeholder="search" />
 			</div>
-			{selected === "usaData" && width < 800 ? (
+			{width < 800 ? (
 				<span>if its not updated then select usa again</span>
 			) : null}
 			<div className="recovered-progress"></div>
