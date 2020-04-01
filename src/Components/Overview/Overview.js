@@ -55,7 +55,7 @@ const Overview = props => {
 				/>
 				<div className="overview-item-name">Total Active</div>
 			</div>
-			<AffectedCountry affected={props.affected} />
+			<AffectedCountry affected={192} />
 		</div>
 	);
 };

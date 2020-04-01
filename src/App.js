@@ -25,17 +25,20 @@ class App extends React.Component {
 				const data = snap.data();
 				const worldWide = this.filter(data.all_countries);
 				const usaData = this.filter(data.usa_data);
+				const indiaData = this.filter(data.india_data);
 				this.setState({
 					overview: data.overview,
 					death_rate: data.death_rate,
 					worldWide,
 					usaData,
+					indiaData,
 					updates: data.updates,
 					loading: false
 				});
 			});
 	}
 	filter = data => {
+		if (!data) return [];
 		data = Object.keys(data).map(key => ({ region: key, ...data[key] }));
 		data.sort((a, b) => b.total_cases - a.total_cases);
 		return data;
@@ -70,7 +73,8 @@ class App extends React.Component {
 					<Tables
 						data={{
 							worldWide: this.state.worldWide,
-							usaData: this.state.usaData
+							usaData: this.state.usaData,
+							indiaData: this.state.indiaData
 						}}
 					/>
 					<GoogleMap />

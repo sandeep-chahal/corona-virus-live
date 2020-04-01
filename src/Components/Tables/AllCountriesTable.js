@@ -39,9 +39,9 @@ const AllCountriesTable = ({ data }) => {
 	};
 
 	const handleDataChange = e => {
-		setSelected(e.target.value);
 		setSortedData(null);
 		setOrderBy("total_cases");
+		setSelected(e.target.value);
 	};
 
 	return (
@@ -51,13 +51,12 @@ const AllCountriesTable = ({ data }) => {
 					<select onClick={handleDataChange}>
 						<option value="worldWide">WorldWide</option>
 						<option value="usaData">USA</option>
+						<option value="indiaData">India</option>
 					</select>
 				</span>
 				<input type="text" onChange={handleSearchInput} placeholder="search" />
 			</div>
-			{width < 800 ? (
-				<span>if its not updated then select usa again</span>
-			) : null}
+			{width < 800 ? <span>select again if table not updated</span> : null}
 			<div className="recovered-progress"></div>
 
 			<TableContainer component={Paper} className="table-container">
