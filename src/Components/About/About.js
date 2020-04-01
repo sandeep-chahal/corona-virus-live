@@ -47,6 +47,9 @@ const About = props => {
 				>
 					bnonews
 				</a>
+				<a target="_blank" href="https://www.mohfw.gov.in/">
+					mohfw.gov.in
+				</a>
 			</p>
 		</div>
 	);
