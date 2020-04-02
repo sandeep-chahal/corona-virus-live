@@ -8,6 +8,7 @@ import TableRow from "@material-ui/core/TableRow";
 import TableSortLabel from "@material-ui/core/TableSortLabel";
 import Paper from "@material-ui/core/Paper";
 import NumberFormat from "react-number-format";
+import Select from "react-select";
 
 const AllCountriesTable = ({ data }) => {
 	var width = window.innerWidth;
@@ -39,21 +40,25 @@ const AllCountriesTable = ({ data }) => {
 	};
 
 	const handleDataChange = e => {
+		console.clear();
+		console.log(e);
 		setSortedData(null);
 		setOrderBy("total_cases");
-		setSelected(e.target.value);
+		setSelected(e.value);
 	};
 
 	return (
 		<div className="all-countries table-wrapper">
 			<div className="header">
-				<span>
-					<select onClick={handleDataChange}>
-						<option value="worldWide">WorldWide</option>
-						<option value="usaData">USA</option>
-						<option value="indiaData">India</option>
-					</select>
-				</span>
+				<Select
+					onChange={handleDataChange}
+					defaultValue={{ value: "worldWide", label: "WorldWide" }}
+					options={[
+						{ value: "worldWide", label: "WordWide" },
+						{ value: "usaData", label: "USA" },
+						{ value: "indiaData", label: "India" }
+					]}
+				/>
 				<input type="text" onChange={handleSearchInput} placeholder="search" />
 			</div>
 			{width < 800 ? <span>select again if table not updated</span> : null}
