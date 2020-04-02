@@ -31,10 +31,6 @@
 
 		iframe {
 			margin: 1rem;
-			@include res(phone) {
-				width: 45%;
-				height: 10rem;
-			}
 		}
 	}
 }
