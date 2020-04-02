@@ -58,7 +58,8 @@ const AllCountriesTable = ({ data }) => {
 						{ value: "usaData", label: "USA" },
 						{ value: "indiaData", label: "India" }
 					]}
-					readOnly
+					inputProps={{ readOnly: true }}
+					isSearchable={false}
 				/>
 				<input type="text" onChange={handleSearchInput} placeholder="search" />
 			</div>
