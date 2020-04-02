@@ -62,6 +62,26 @@ class App extends React.Component {
 
 				<main>
 					<h1>Corona Virus Live Dashboard</h1>
+					{!window.location.href.includes("covid-live.netlify.app") ? (
+						<span
+							className="warning"
+							style={{
+								fontSize: "1.6rem",
+								textAlign: "center",
+								display: "block",
+								margin: `${this.width < 800 ? "0rem" : "3rem"} auto 0 auto`
+							}}
+						>
+							pls use{" "}
+							<a
+								style={{ color: "var(--yellow" }}
+								href="https://covid-live.netlify.app/"
+							>
+								covid-live.netlify.app
+							</a>{" "}
+							from now on.
+						</span>
+					) : null}
 					<Overview
 						totalCases={parseInt(this.state.overview.CoronavirusCases)}
 						totalDeaths={parseInt(this.state.overview.Deaths)}
@@ -70,6 +90,7 @@ class App extends React.Component {
 						totalActive={parseInt(this.state.overview.active)}
 						affected={this.state.worldWide.length}
 					/>
+
 					<Tables
 						data={{
 							worldWide: this.state.worldWide,
