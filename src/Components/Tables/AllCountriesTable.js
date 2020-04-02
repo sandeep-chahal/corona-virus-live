@@ -62,7 +62,6 @@ const AllCountriesTable = ({ data }) => {
 				/>
 				<input type="text" onChange={handleSearchInput} placeholder="search" />
 			</div>
-			{width < 800 ? <span>select again if table not updated</span> : null}
 			<div className="recovered-progress"></div>
 
 			<TableContainer component={Paper} className="table-container">
@@ -70,7 +69,7 @@ const AllCountriesTable = ({ data }) => {
 					aria-label="sticky table"
 					stickyHeader
 					className="table"
-					dense={width < 650}
+					size={width < 800 ? "small" : "normal"}
 				>
 					<TableHead>
 						<TableRow>
