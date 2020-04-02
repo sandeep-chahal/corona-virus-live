@@ -74,39 +74,48 @@ const AllCountriesTable = ({ data }) => {
 					<TableHead>
 						<TableRow>
 							<TableCell>Region</TableCell>
-							<TableCell align="center">
-								<TableSortLabel
-									direction={orderBy === "total_cases" ? "asc" : "desc"}
-									onClick={() => sortData("total_cases")}
-								>
-									Confirmed
-								</TableSortLabel>
-							</TableCell>
-							<TableCell align="center">
-								<TableSortLabel
-									direction={orderBy === "total_deaths" ? "asc" : "desc"}
-									onClick={() => sortData("total_deaths")}
-								>
-									Deaths
-								</TableSortLabel>
-							</TableCell>
-							<TableCell align="center">
-								<TableSortLabel
-									direction={orderBy === "new_deaths" ? "asc" : "desc"}
-									onClick={() => sortData("new_deaths")}
-								>
-									New Deaths
-								</TableSortLabel>
-							</TableCell>
-							<TableCell align="center">
-								<TableSortLabel
-									direction={orderBy === "total_recovered" ? "asc" : "desc"}
-									onClick={() => sortData("total_recovered")}
-								>
-									Recovered
-								</TableSortLabel>
-							</TableCell>
-							{selected === "usaData" ? null : (
+							{data[selected][0]["total_cases"] !== undefined ? (
+								<TableCell align="center">
+									<TableSortLabel
+										direction={orderBy === "total_cases" ? "asc" : "desc"}
+										onClick={() => sortData("total_cases")}
+									>
+										Confirmed
+									</TableSortLabel>
+								</TableCell>
+							) : null}
+
+							{data[selected][0]["total_deaths"] !== undefined ? (
+								<TableCell align="center">
+									<TableSortLabel
+										direction={orderBy === "total_deaths" ? "asc" : "desc"}
+										onClick={() => sortData("total_deaths")}
+									>
+										New Deaths
+									</TableSortLabel>
+								</TableCell>
+							) : null}
+							{data[selected][0]["new_deaths"] !== undefined ? (
+								<TableCell align="center">
+									<TableSortLabel
+										direction={orderBy === "new_deaths" ? "asc" : "desc"}
+										onClick={() => sortData("new_deaths")}
+									>
+										New Deaths
+									</TableSortLabel>
+								</TableCell>
+							) : null}
+							{data[selected][0]["total_recovered"] !== undefined ? (
+								<TableCell align="center">
+									<TableSortLabel
+										direction={orderBy === "total_recovered" ? "asc" : "desc"}
+										onClick={() => sortData("total_recovered")}
+									>
+										Recovered
+									</TableSortLabel>
+								</TableCell>
+							) : null}
+							{data[selected][0]["serious"] !== undefined ? (
 								<TableCell align="center">
 									<TableSortLabel
 										direction={orderBy === "serious" ? "asc" : "desc"}
@@ -115,23 +124,27 @@ const AllCountriesTable = ({ data }) => {
 										Critical
 									</TableSortLabel>
 								</TableCell>
-							)}
-							<TableCell align="center">
-								<TableSortLabel
-									direction={orderBy === "new_cases" ? "asc" : "desc"}
-									onClick={() => sortData("new_cases")}
-								>
-									New Cases
-								</TableSortLabel>
-							</TableCell>
-							<TableCell align="center">
-								<TableSortLabel
-									direction={orderBy === "active_cases" ? "asc" : "desc"}
-									onClick={() => sortData("active_cases")}
-								>
-									Active Cases
-								</TableSortLabel>
-							</TableCell>
+							) : null}
+							{data[selected][0]["new_cases"] !== undefined ? (
+								<TableCell align="center">
+									<TableSortLabel
+										direction={orderBy === "new_cases" ? "asc" : "desc"}
+										onClick={() => sortData("new_cases")}
+									>
+										New Cases
+									</TableSortLabel>
+								</TableCell>
+							) : null}
+							{data[selected][0]["active_cases"] !== undefined ? (
+								<TableCell align="center">
+									<TableSortLabel
+										direction={orderBy === "active_cases" ? "asc" : "desc"}
+										onClick={() => sortData("active_cases")}
+									>
+										Active Cases
+									</TableSortLabel>
+								</TableCell>
+							) : null}
 						</TableRow>
 					</TableHead>
 					<TableBody>
@@ -140,36 +153,45 @@ const AllCountriesTable = ({ data }) => {
 								<TableCell component="th" scope="row">
 									{row.region}
 								</TableCell>
-								<TableCell align="center">
-									<NumberFormat
-										value={row.total_cases}
-										displayType={"text"}
-										thousandSeparator={true}
-									/>
-								</TableCell>
-								<TableCell align="center">
-									<NumberFormat
-										value={row.total_deaths}
-										displayType={"text"}
-										thousandSeparator={true}
-									/>
-								</TableCell>
-								<TableCell align="center">
-									{row.new_deaths ? "+" : null}
-									<NumberFormat
-										value={row.new_deaths}
-										displayType={"text"}
-										thousandSeparator={true}
-									/>
-								</TableCell>
-								<TableCell align="center">
-									<NumberFormat
-										value={row.total_recovered}
-										displayType={"text"}
-										thousandSeparator={true}
-									/>
-								</TableCell>
-								{selected === "usaData" ? null : (
+								{data[selected][0]["total_cases"] !== undefined ? (
+									<TableCell align="center">
+										<NumberFormat
+											value={row.total_cases}
+											displayType={"text"}
+											thousandSeparator={true}
+										/>
+									</TableCell>
+								) : null}
+								{data[selected][0]["total_deaths"] !== undefined ? (
+									<TableCell align="center">
+										<NumberFormat
+											value={row.total_deaths}
+											displayType={"text"}
+											thousandSeparator={true}
+										/>
+									</TableCell>
+								) : null}
+								{data[selected][0]["new_deaths"] !== undefined ? (
+									<TableCell align="center">
+										{row.new_deaths ? "+" : null}
+										<NumberFormat
+											value={row.new_deaths}
+											displayType={"text"}
+											thousandSeparator={true}
+										/>
+									</TableCell>
+								) : null}
+								{data[selected][0]["total_recovered"] !== undefined ? (
+									<TableCell align="center">
+										<NumberFormat
+											value={row.total_recovered}
+											displayType={"text"}
+											thousandSeparator={true}
+										/>
+									</TableCell>
+								) : null}
+
+								{data[selected][0]["serious"] !== undefined ? (
 									<TableCell align="center">
 										<NumberFormat
 											value={row.serious}
@@ -177,22 +199,26 @@ const AllCountriesTable = ({ data }) => {
 											thousandSeparator={true}
 										/>
 									</TableCell>
-								)}
-								<TableCell align="center">
-									{row.new_cases ? "+" : null}
-									<NumberFormat
-										value={row.new_cases}
-										displayType={"text"}
-										thousandSeparator={true}
-									/>
-								</TableCell>
-								<TableCell align="center">
-									<NumberFormat
-										value={row.active_cases}
-										displayType={"text"}
-										thousandSeparator={true}
-									/>
-								</TableCell>
+								) : null}
+								{data[selected][0]["new_cases"] !== undefined ? (
+									<TableCell align="center">
+										{row.new_cases ? "+" : null}
+										<NumberFormat
+											value={row.new_cases}
+											displayType={"text"}
+											thousandSeparator={true}
+										/>
+									</TableCell>
+								) : null}
+								{data[selected][0]["active_cases"] !== undefined ? (
+									<TableCell align="center">
+										<NumberFormat
+											value={row.active_cases}
+											displayType={"text"}
+											thousandSeparator={true}
+										/>
+									</TableCell>
+								) : null}
 							</TableRow>
 						))}
 					</TableBody>
