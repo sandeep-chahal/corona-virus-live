@@ -27,6 +27,7 @@ const SideBar = props => {
 				About Me
 			</a>
 			<a
+				rel="noopener noreferrer"
 				href="https://ko-fi.com/sandeep"
 				target="_blank"
 				className="ko-fi"

@@ -12,6 +12,7 @@ import Select from "react-select";
 
 const AllCountriesTable = ({ data }) => {
 	var width = window.innerWidth;
+	const [searchText, setSearchText] = useState("");
 	const [sortedData, setSortedData] = useState(null);
 	const [orderBy, setOrderBy] = useState("total_cases");
 	const [selected, setSelected] = useState("worldWide");
@@ -26,6 +27,7 @@ const AllCountriesTable = ({ data }) => {
 
 	const handleSearchInput = e => {
 		const value = e.target.value;
+		setSearchText(value);
 		if (value.length > 1) {
 			searchData(value);
 		} else {
@@ -40,8 +42,7 @@ const AllCountriesTable = ({ data }) => {
 	};
 
 	const handleDataChange = e => {
-		console.clear();
-		console.log(e);
+		setSearchText("");
 		setSortedData(null);
 		setOrderBy("total_cases");
 		setSelected(e.value);
@@ -61,7 +62,12 @@ const AllCountriesTable = ({ data }) => {
 					inputProps={{ readOnly: true }}
 					isSearchable={false}
 				/>
-				<input type="text" onChange={handleSearchInput} placeholder="search" />
+				<input
+					type="text"
+					value={searchText}
+					onChange={handleSearchInput}
+					placeholder="search"
+				/>
 			</div>
 			<div className="recovered-progress"></div>
 
@@ -70,7 +76,7 @@ const AllCountriesTable = ({ data }) => {
 					aria-label="sticky table"
 					stickyHeader
 					className="table"
-					size={width < 800 ? "small" : "normal"}
+					size={width < 800 ? "small" : "medium"}
 				>
 					<TableHead>
 						<TableRow>

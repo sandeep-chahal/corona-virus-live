@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Updates.scss";
 import Collapsible from "react-collapsible";
 
@@ -9,6 +9,7 @@ const Updates = props => {
 			<div className="header">
 				Updates{" "}
 				<a
+					rel="noopener noreferrer"
 					className="source"
 					target="_blank"
 					href="https://bnonews.com/index.php/2020/03/the-latest-coronavirus-cases/"
@@ -23,7 +24,7 @@ const Updates = props => {
 							<li className="li" key={i + j}>
 								{item.title}
 								<p className="time">(at {item.time.slice(0, 5)})</p>
-								<a href={item.source} target="_blank">
+								<a href={item.source} rel="noopener noreferrer" target="_blank">
 									(Source)
 								</a>
 							</li>

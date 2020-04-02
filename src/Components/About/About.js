@@ -9,6 +9,7 @@ const About = props => {
 			<p>
 				Follow me on Instagram:{" "}
 				<a
+					rel="noopener noreferrer"
 					target="_blank"
 					href="https://www.instagram.com/sandeep_chahal_573/"
 					className="btn insta"
@@ -19,6 +20,7 @@ const About = props => {
 			<p>
 				Linkedin:{" "}
 				<a
+					rel="noopener noreferrer"
 					target="_blank"
 					href="https://www.linkedin.com/in/sandeep-chahal-7678ab162/"
 					className="btn linkedin"
@@ -27,6 +29,7 @@ const About = props => {
 				</a>
 			</p>
 			<a
+				rel="noopener noreferrer"
 				href="https://ko-fi.com/sandeep"
 				target="_blank"
 				className="ko-fi"
@@ -38,16 +41,25 @@ const About = props => {
 
 			<div className="source">Source's</div>
 			<p className="links">
-				<a target="_blank" href="https://www.worldometers.info/coronavirus/">
+				<a
+					rel="noopener noreferrer"
+					target="_blank"
+					href="https://www.worldometers.info/coronavirus/"
+				>
 					worldometers
 				</a>
 				<a
+					rel="noopener noreferrer"
 					target="_blank"
 					href="https://bnonews.com/index.php/2020/02/the-latest-coronavirus-cases/"
 				>
 					bnonews
 				</a>
-				<a target="_blank" href="https://www.mohfw.gov.in/">
+				<a
+					rel="noopener noreferrer"
+					target="_blank"
+					href="https://www.mohfw.gov.in/"
+				>
 					mohfw.gov.in
 				</a>
 			</p>

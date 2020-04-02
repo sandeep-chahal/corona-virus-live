@@ -2,7 +2,6 @@ import React from "react";
 import "./UsefulVideos.scss";
 
 const UsefulVideos = props => {
-	var width = window.innerWidth;
 	return (
 		<div className="useful-video">
 			<div className="header">Useful Videos</div>

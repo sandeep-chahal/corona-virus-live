@@ -23,11 +23,12 @@ const NavBar = props => {
 				<a href="#about-corona" className="nav-item">
 					About COVID-19
 				</a>
-				<a href="#about" class="nav-item">
+				<a href="#about" className="nav-item">
 					About Me
 				</a>
 			</div>
 			<a
+				rel="noopener noreferrer"
 				href="https://ko-fi.com/sandeep"
 				target="_blank"
 				className="ko-fi"

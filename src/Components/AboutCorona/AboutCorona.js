@@ -20,6 +20,7 @@ const AboutCorona = props => {
 						alt="corona virus"
 					/>
 					<a
+						rel="noopener noreferrer"
 						target="_blank"
 						href="http://altrincham.today/2020/03/17/news/five-new-cases-coronavirus-confirmed-trafford/"
 					>
