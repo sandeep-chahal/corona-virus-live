@@ -5,7 +5,6 @@ import Tables from "./Components/Tables/Tables";
 import GoogleMap from "./Components/Maps/GoogleMap";
 import firebase from "./firebase";
 import Charts from "./Components/Charts/Charts";
-import News from "./Components/News/News";
 import AboutCorona from "./Components/AboutCorona/AboutCorona";
 import UsefulVideos from "./Components/UsefulVideos/UsefulVideos";
 import Updates from "./Components/Updates/Updates";
@@ -107,7 +106,6 @@ class App extends React.Component {
 					<AboutCorona />
 					<UsefulVideos />
 					<Updates updates={this.state.updates} />
-					<News />
 					<About />
 				</main>
 			</div>
