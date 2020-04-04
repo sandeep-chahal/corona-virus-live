@@ -20,7 +20,7 @@ class App extends React.Component {
 			.collection("cororna-virus")
 			.doc("data")
 			.get()
-			.then(snap => {
+			.then((snap) => {
 				const data = snap.data();
 				const worldWide = this.filter(data.all_countries);
 				const usaData = this.filter(data.usa_data);
@@ -32,13 +32,13 @@ class App extends React.Component {
 					usaData,
 					indiaData,
 					updates: data.updates,
-					loading: false
+					loading: false,
 				});
 			});
 	}
-	filter = data => {
+	filter = (data) => {
 		if (!data) return [];
-		data = Object.keys(data).map(key => ({ region: key, ...data[key] }));
+		data = Object.keys(data).map((key) => ({ region: key, ...data[key] }));
 		data.sort((a, b) => b.total_cases - a.total_cases);
 		return data;
 	};
@@ -61,22 +61,22 @@ class App extends React.Component {
 
 				<main>
 					<h1>Corona Virus Live Dashboard</h1>
-					{!window.location.href.includes("covid-live.netlify.app") ? (
+					{!window.location.href.includes("covid-live.online") ? (
 						<span
 							className="warning"
 							style={{
 								fontSize: "1.6rem",
 								textAlign: "center",
 								display: "block",
-								margin: `${this.width < 800 ? "0rem" : "3rem"} auto 0 auto`
+								margin: `${this.width < 800 ? "0rem" : "3rem"} auto 0 auto`,
 							}}
 						>
 							pls use{" "}
 							<a
 								style={{ color: "var(--yellow" }}
-								href="https://covid-live.netlify.app/"
+								href="https://covid-live.online"
 							>
-								covid-live.netlify.app
+								covid-live.online
 							</a>{" "}
 							from now on.
 						</span>
@@ -94,7 +94,7 @@ class App extends React.Component {
 						data={{
 							worldWide: this.state.worldWide,
 							usaData: this.state.usaData,
-							indiaData: this.state.indiaData
+							indiaData: this.state.indiaData,
 						}}
 					/>
 					<GoogleMap />

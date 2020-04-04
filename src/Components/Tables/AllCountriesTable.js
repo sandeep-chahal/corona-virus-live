@@ -17,7 +17,7 @@ const AllCountriesTable = ({ data }) => {
 	const [orderBy, setOrderBy] = useState("total_cases");
 	const [selected, setSelected] = useState("worldWide");
 
-	const sortData = by => {
+	const sortData = (by) => {
 		(sortedData ? sortedData : data[selected]).sort((a, b) =>
 			orderBy === by ? a[by] - b[by] : b[by] - a[by]
 		);
@@ -25,7 +25,7 @@ const AllCountriesTable = ({ data }) => {
 		else setOrderBy(by);
 	};
 
-	const handleSearchInput = e => {
+	const handleSearchInput = (e) => {
 		const value = e.target.value;
 		setSearchText(value);
 		if (value.length > 1) {
@@ -34,14 +34,14 @@ const AllCountriesTable = ({ data }) => {
 			setSortedData(null);
 		}
 	};
-	const searchData = region => {
-		const newData = data[selected].filter(item =>
+	const searchData = (region) => {
+		const newData = data[selected].filter((item) =>
 			item.region.toLowerCase().includes(region.toLowerCase())
 		);
 		setSortedData(newData);
 	};
 
-	const handleDataChange = e => {
+	const handleDataChange = (e) => {
 		setSearchText("");
 		setSortedData(null);
 		setOrderBy("total_cases");
@@ -57,7 +57,7 @@ const AllCountriesTable = ({ data }) => {
 					options={[
 						{ value: "worldWide", label: "WordWide" },
 						{ value: "usaData", label: "USA" },
-						{ value: "indiaData", label: "India" }
+						{ value: "indiaData", label: "India" },
 					]}
 					inputProps={{ readOnly: true }}
 					isSearchable={false}
@@ -98,7 +98,7 @@ const AllCountriesTable = ({ data }) => {
 										direction={orderBy === "total_deaths" ? "asc" : "desc"}
 										onClick={() => sortData("total_deaths")}
 									>
-										New Deaths
+										Total Deaths
 									</TableSortLabel>
 								</TableCell>
 							) : null}
@@ -155,7 +155,7 @@ const AllCountriesTable = ({ data }) => {
 						</TableRow>
 					</TableHead>
 					<TableBody>
-						{(sortedData ? sortedData : data[selected] || []).map(row => (
+						{(sortedData ? sortedData : data[selected] || []).map((row) => (
 							<TableRow key={row.region}>
 								<TableCell component="th" scope="row">
 									{row.region}

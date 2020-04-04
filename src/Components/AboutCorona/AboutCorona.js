@@ -1,7 +1,8 @@
 import React from "react";
 import "./AboutCorona.scss";
+import CoroanJpg from "../../Assets/corona2.jpg";
 
-const AboutCorona = props => {
+const AboutCorona = (props) => {
 	return (
 		<div className="about-corona" id="about-corona">
 			<div className="what">What is Corona Virus</div>
@@ -15,10 +16,7 @@ const AboutCorona = props => {
 					feet) with people who are unwell.
 				</div>
 				<div>
-					<img
-						src="http://altrincham.today/wp-content/uploads/2020/03/corona-900x350.jpg"
-						alt="corona virus"
-					/>
+					<img src={CoroanJpg} alt="corona virus" />
 					<a
 						rel="noopener noreferrer"
 						target="_blank"

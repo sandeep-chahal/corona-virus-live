@@ -1,3 +1,4 @@
-# https://www.robotstxt.org/robotstxt.html
 User-agent: *
-Disallow: /*
+Allow: /
+Allow: /sitemap.xml
+Sitemap: https://covid-live.online/sitemap.xml
