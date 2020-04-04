@@ -22,7 +22,7 @@ class App extends React.Component {
 			.get()
 			.then((snap) => {
 				const data = snap.data();
-				const worldWide = this.filter(data.all_countries);
+				const worldWide = this.filter(data.all_countries).slice(1);
 				const usaData = this.filter(data.usa_data);
 				const indiaData = this.filter(data.india_data);
 				this.setState({
