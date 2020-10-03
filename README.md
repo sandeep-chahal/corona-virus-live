@@ -4,7 +4,7 @@ Built using React, Firebase
 
 ## Installation
 
-see [live demo](https://covid-live.netlify.app/).
+[Click here for live demo](https://covid-live.netlify.app/).
 
 ```bash
 npm install
