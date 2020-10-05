@@ -46,7 +46,17 @@ const AllCountriesTable = ({ data }) => {
 		setSortedData(null);
 		setOrderBy("total_cases");
 		setSelected(e.value);
-	};
+  };
+
+  const columns = [
+    { key: "total_cases", labelText: "Confirmed" },
+    { key: "total_deaths", labelText: "Total Deaths" },
+    { key: "new_deaths", labelText: "New Deaths", hasPlus: true },
+    { key: "total_recovered", labelText: "Recovered" },
+    { key: "serious", labelText: "Critical" },
+    { key: "new_cases", labelText: "New Cases", hasPlus: true },
+    { key: "active_cases", labelText: "Active Cases" },
+  ]
 
 	return (
 		<div className="all-countries table-wrapper">
@@ -81,77 +91,22 @@ const AllCountriesTable = ({ data }) => {
 					<TableHead>
 						<TableRow>
 							<TableCell>Region</TableCell>
-							{data[selected][0]["total_cases"] !== undefined ? (
-								<TableCell align="center">
-									<TableSortLabel
-										direction={orderBy === "total_cases" ? "asc" : "desc"}
-										onClick={() => sortData("total_cases")}
-									>
-										Confirmed
-									</TableSortLabel>
-								</TableCell>
-							) : null}
+              {columns.map((column) => {
+                if (data[selected][0][column.key] === undefined) {
+                  return null;
+                }
 
-							{data[selected][0]["total_deaths"] !== undefined ? (
-								<TableCell align="center">
-									<TableSortLabel
-										direction={orderBy === "total_deaths" ? "asc" : "desc"}
-										onClick={() => sortData("total_deaths")}
-									>
-										Total Deaths
-									</TableSortLabel>
-								</TableCell>
-							) : null}
-							{data[selected][0]["new_deaths"] !== undefined ? (
-								<TableCell align="center">
-									<TableSortLabel
-										direction={orderBy === "new_deaths" ? "asc" : "desc"}
-										onClick={() => sortData("new_deaths")}
-									>
-										New Deaths
-									</TableSortLabel>
-								</TableCell>
-							) : null}
-							{data[selected][0]["total_recovered"] !== undefined ? (
-								<TableCell align="center">
-									<TableSortLabel
-										direction={orderBy === "total_recovered" ? "asc" : "desc"}
-										onClick={() => sortData("total_recovered")}
-									>
-										Recovered
-									</TableSortLabel>
-								</TableCell>
-							) : null}
-							{data[selected][0]["serious"] !== undefined ? (
-								<TableCell align="center">
-									<TableSortLabel
-										direction={orderBy === "serious" ? "asc" : "desc"}
-										onClick={() => sortData("serious")}
-									>
-										Critical
-									</TableSortLabel>
-								</TableCell>
-							) : null}
-							{data[selected][0]["new_cases"] !== undefined ? (
-								<TableCell align="center">
-									<TableSortLabel
-										direction={orderBy === "new_cases" ? "asc" : "desc"}
-										onClick={() => sortData("new_cases")}
-									>
-										New Cases
-									</TableSortLabel>
-								</TableCell>
-							) : null}
-							{data[selected][0]["active_cases"] !== undefined ? (
-								<TableCell align="center">
-									<TableSortLabel
-										direction={orderBy === "active_cases" ? "asc" : "desc"}
-										onClick={() => sortData("active_cases")}
-									>
-										Active Cases
-									</TableSortLabel>
-								</TableCell>
-							) : null}
+                return (
+                  <TableCell key={column.key} align="center">
+                    <TableSortLabel
+                      direction={orderBy === column.key ? "asc" : "desc"}
+                      onClick={() => sortData(column.key)}
+                    >
+                      {column.labelText}
+                    </TableSortLabel>
+                  </TableCell>
+                )
+              })}
 						</TableRow>
 					</TableHead>
 					<TableBody>
@@ -160,72 +115,22 @@ const AllCountriesTable = ({ data }) => {
 								<TableCell component="th" scope="row">
 									{row.region}
 								</TableCell>
-								{data[selected][0]["total_cases"] !== undefined ? (
-									<TableCell align="center">
-										<NumberFormat
-											value={row.total_cases}
-											displayType={"text"}
-											thousandSeparator={true}
-										/>
-									</TableCell>
-								) : null}
-								{data[selected][0]["total_deaths"] !== undefined ? (
-									<TableCell align="center">
-										<NumberFormat
-											value={row.total_deaths}
-											displayType={"text"}
-											thousandSeparator={true}
-										/>
-									</TableCell>
-								) : null}
-								{data[selected][0]["new_deaths"] !== undefined ? (
-									<TableCell align="center">
-										{row.new_deaths ? "+" : null}
-										<NumberFormat
-											value={row.new_deaths}
-											displayType={"text"}
-											thousandSeparator={true}
-										/>
-									</TableCell>
-								) : null}
-								{data[selected][0]["total_recovered"] !== undefined ? (
-									<TableCell align="center">
-										<NumberFormat
-											value={row.total_recovered}
-											displayType={"text"}
-											thousandSeparator={true}
-										/>
-									</TableCell>
-								) : null}
+								{columns.map((column) => {
+                  if (data[selected][0][column.key] === undefined) {
+                    return null;
+                  }
 
-								{data[selected][0]["serious"] !== undefined ? (
-									<TableCell align="center">
-										<NumberFormat
-											value={row.serious}
-											displayType={"text"}
-											thousandSeparator={true}
-										/>
-									</TableCell>
-								) : null}
-								{data[selected][0]["new_cases"] !== undefined ? (
-									<TableCell align="center">
-										{row.new_cases ? "+" : null}
-										<NumberFormat
-											value={row.new_cases}
-											displayType={"text"}
-											thousandSeparator={true}
-										/>
-									</TableCell>
-								) : null}
-								{data[selected][0]["active_cases"] !== undefined ? (
-									<TableCell align="center">
-										<NumberFormat
-											value={row.active_cases}
-											displayType={"text"}
-											thousandSeparator={true}
-										/>
-									</TableCell>
-								) : null}
+                  return (
+                    <TableCell key={column.key} align="center">
+                      {column.hasPlus && row[column.key] ? "+" : null}
+                      <NumberFormat
+                        value={row[column.key]}
+                        displayType={"text"}
+                        thousandSeparator={true}
+                      />
+                    </TableCell>
+                  );
+                })}
 							</TableRow>
 						))}
 					</TableBody>
