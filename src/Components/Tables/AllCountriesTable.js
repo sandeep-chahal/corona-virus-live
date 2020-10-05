@@ -48,15 +48,15 @@ const AllCountriesTable = ({ data }) => {
 		setSelected(e.value);
   };
 
-  const columns = [
-    { key: "total_cases", labelText: "Confirmed" },
-    { key: "total_deaths", labelText: "Total Deaths" },
-    { key: "new_deaths", labelText: "New Deaths", hasPlus: true },
-    { key: "total_recovered", labelText: "Recovered" },
-    { key: "serious", labelText: "Critical" },
-    { key: "new_cases", labelText: "New Cases", hasPlus: true },
-    { key: "active_cases", labelText: "Active Cases" },
-  ]
+	const columns = [
+		{ key: "total_cases", labelText: "Confirmed" },
+		{ key: "total_deaths", labelText: "Total Deaths" },
+		{ key: "new_deaths", labelText: "New Deaths", hasPlus: true },
+		{ key: "total_recovered", labelText: "Recovered" },
+		{ key: "serious", labelText: "Critical" },
+		{ key: "new_cases", labelText: "New Cases", hasPlus: true },
+		{ key: "active_cases", labelText: "Active Cases" },
+	]
 
 	return (
 		<div className="all-countries table-wrapper">
@@ -91,22 +91,22 @@ const AllCountriesTable = ({ data }) => {
 					<TableHead>
 						<TableRow>
 							<TableCell>Region</TableCell>
-              {columns.map((column) => {
-                if (data[selected][0][column.key] === undefined) {
-                  return null;
-                }
+							{columns.map((column) => {
+								if (data[selected][0][column.key] === undefined) {
+									return null;
+								}
 
-                return (
-                  <TableCell key={column.key} align="center">
-                    <TableSortLabel
-                      direction={orderBy === column.key ? "asc" : "desc"}
-                      onClick={() => sortData(column.key)}
-                    >
-                      {column.labelText}
-                    </TableSortLabel>
-                  </TableCell>
-                )
-              })}
+								return (
+									<TableCell key={column.key} align="center">
+										<TableSortLabel
+											direction={orderBy === column.key ? "asc" : "desc"}
+											onClick={() => sortData(column.key)}
+										>
+											{column.labelText}
+										</TableSortLabel>
+									</TableCell>
+								)
+							})}
 						</TableRow>
 					</TableHead>
 					<TableBody>
@@ -116,21 +116,21 @@ const AllCountriesTable = ({ data }) => {
 									{row.region}
 								</TableCell>
 								{columns.map((column) => {
-                  if (data[selected][0][column.key] === undefined) {
-                    return null;
-                  }
+									if (data[selected][0][column.key] === undefined) {
+										return null;
+									}
 
-                  return (
-                    <TableCell key={column.key} align="center">
-                      {column.hasPlus && row[column.key] ? "+" : null}
-                      <NumberFormat
-                        value={row[column.key]}
-                        displayType={"text"}
-                        thousandSeparator={true}
-                      />
-                    </TableCell>
-                  );
-                })}
+									return (
+										<TableCell key={column.key} align="center">
+											{column.hasPlus && row[column.key] ? "+" : null}
+											<NumberFormat
+												value={row[column.key]}
+												displayType={"text"}
+												thousandSeparator={true}
+											/>
+										</TableCell>
+									);
+								})}
 							</TableRow>
 						))}
 					</TableBody>
